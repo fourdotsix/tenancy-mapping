@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        $columns = config('tenancy-mapping.database.columns');
+
+        throw_if(
+            empty($columns) || !in_array(['tenant_type'], $columns),
+            new \Exception('Error: Database columns missing or config/tenancy-mapping.php not loaded.'),
+        );
+
+        Schema::table('tenants', function (Blueprint $table) use ($columns) {
+            $table->string($columns['tenant_type'])->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        $columns = config('tenancy-mapping.database.columns');
+
+        throw_if(
+            empty($columns) || !in_array(['tenant_type'], $columns),
+            new \Exception('Error: Database columns missing or config/tenancy-mapping.php not loaded.'),
+        );
+
+        Schema::table('tenants', function (Blueprint $table) use ($columns) {
+            $table->dropColumn([
+                $columns['type'],
+            ]);
+        });
+    }
+};

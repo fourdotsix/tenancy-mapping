@@ -1,0 +1,6 @@
+---
+name: Generic descriptor mappings
+description: Descriptor Mappings for all tenant types (generic)
+mappings:
+  example: one
+  exampleTwo: two

@@ -1,24 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "fourdotsix/tenancy-mapping",
+    "description": "Tenant data handling for stancl/tenancy ",
     "keywords": [
-        ":vendor_name",
+        "Four Dot Six",
         "laravel",
-        ":package_slug"
+        "tenancy-mapping"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/fourdotsix/tenancy-mapping",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Hash",
+            "email": "11258035+secrethash@users.noreply.github.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.3",
+        "dallgoot/yaml": "^1.0",
+        "illuminate/contracts": "^11.0||^12.0",
         "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^11.0||^12.0"
+        "stancl/tenancy": "dev-master"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
@@ -30,18 +32,20 @@
         "pestphp/pest-plugin-laravel": "^4.0",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "spatie/laravel-ray": "^1.35"
+        "phpstan/phpstan-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
-        }
+            "Fourdotsix\\TenancyMapping\\": "src/",
+            "Fourdotsix\\TenancyMapping\\Database\\Factories\\": "database/factories/"
+        },
+        "files": [
+            "src/Helpers/mapping.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Fourdotsix\\TenancyMapping\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -63,10 +67,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Fourdotsix\\TenancyMapping\\TenancyMappingServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "TenancyMapping": "Fourdotsix\\TenancyMapping\\Facades\\TenancyMapping"
             }
         }
     },

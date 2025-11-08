@@ -1,0 +1,9 @@
+---
+name: Settings for all tenant types (Generic)
+description: These are generic settings for all the tenant types
+mappings:
+  fallback:
+    - logo: https://example.com/images/logo.svg
+    - currency: USD
+  tracking:
+    - domain: null

@@ -1,0 +1,7 @@
+---
+# A test mapping file for tenant 257378186566963200 referred as foo.example.com
+name: FOO.EXAMPLE.CO ORG mappings
+description: Descriptor mappings for tenant FOO.EXAMPLE.CO
+mappings:
+  example: one
+  exampleTwo: two
