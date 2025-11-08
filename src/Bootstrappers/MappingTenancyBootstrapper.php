@@ -18,14 +18,14 @@ class MappingTenancyBootstrapper implements TenancyBootstrapper
 
     public function bootstrap(Tenant $tenant): void
     {
-        if ($this->config['mapper.database.connector'] === 'redis') {
+        if ($this->config['tenancy-mapping.database.connector'] === 'redis') {
             $this->bootstrapRedis($tenant);
         }
     }
 
     public function revert(): void
     {
-        if ($this->config['mapper.database.connector'] === 'redis') {
+        if ($this->config['tenancy-mapping.database.connector'] === 'redis') {
             $this->revertRedis();
         }
     }
