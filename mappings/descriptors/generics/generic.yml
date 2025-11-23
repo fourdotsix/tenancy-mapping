@@ -1,6 +1,7 @@
 ---
+# yaml-language-server: $schema=../../.schema/descriptors.schema.yaml
 name: Generic descriptor mappings
 description: Descriptor Mappings for all tenant types (generic)
 mappings:
   example: one
-  exampleTwo: two
+  example_two: two

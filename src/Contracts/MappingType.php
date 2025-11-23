@@ -58,7 +58,7 @@ interface MappingType
     /**
      * Get tenant map file `/path/name`
      *
-     * @param  string  $tenantId  Tenant UID
+     * @param  string  $tenantId  Tenant ID
      */
     public function tenantMapFile(string $tenantId): string;
 

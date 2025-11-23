@@ -1,0 +1,17 @@
+title: Generic Mappings
+type: object
+required:
+  - name
+  - description
+  - mappings
+properties:
+  name:
+    type: string
+  description:
+    type: string
+  mappings:
+    type: object
+    additionalProperties:
+      type: string
+    propertyNames:
+      pattern: ^[a-z][a-z|A-Z|_]+$

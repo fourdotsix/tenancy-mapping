@@ -1,10 +1,10 @@
 ---
 # yaml-language-server: $schema=../../.schema/settings.schema.yaml
+
+# A test settings mapping file for tenant 257378186566963200 referred as foo.example.com
 name: Settings for all tenant types (Generic)
 description: These are generic settings for all the tenant types
 mappings:
-  fallback:
-    - logo: https://example.com/images/logo.svg
-    - currency: USD
   tracking:
-    - domain: null
+    # This will be overridden from `null` to the below value 
+    - domain: https://link.foo.com
