@@ -1,0 +1,26 @@
+title: Descriptor Mappings
+type: object
+required:
+  - name
+  - description
+  - mappings
+properties:
+  name:
+    type: string
+  description:
+    type: string
+  mappings:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: string
+        - type: number
+        - type: object
+          properties:
+            additionalProperties:
+              oneOf:
+                - type: string
+                - type: number
+                - type: object
+    propertyNames:
+      pattern: ^[a-z][a-z_]+$
